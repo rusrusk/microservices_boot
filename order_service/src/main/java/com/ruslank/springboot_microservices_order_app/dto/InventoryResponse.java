@@ -1,4 +1,4 @@
-package com.ruslank.springboot_microservices_inventory_app.dto;
+package com.ruslank.springboot_microservices_order_app.dto;
 
 import lombok.*;
 

@@ -1,5 +1,6 @@
 package com.ruslank.springboot_microservices_order_app.services;
 
+import com.ruslank.springboot_microservices_order_app.dto.InventoryResponse;
 import com.ruslank.springboot_microservices_order_app.dto.ItemsPerOrderDto;
 import com.ruslank.springboot_microservices_order_app.dto.OrderRequest;
 import com.ruslank.springboot_microservices_order_app.entities.ItemsPerOrder;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -24,12 +26,12 @@ public class OrderService {
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
         //map ItemsPerOrderDto to ItemsPerOrder
-        List<ItemsPerOrder> itemsPerOrderDtoList =  orderRequest.getItemsPerOrderDtoList()
+        List<ItemsPerOrder> itemsPerOrderList =  orderRequest.getItemsPerOrderDtoList()
                 .stream()
                 .map(items -> mapToDto(items)).collect(Collectors.toList());
 
         //setting dtolist to order list
-        order.setItemsPerOrderList(itemsPerOrderDtoList);
+        order.setItemsPerOrderList(itemsPerOrderList);
 
         List<String> listOfSkuCodes = order.getItemsPerOrderList()
                 .stream()
@@ -37,19 +39,25 @@ public class OrderService {
                 .collect(Collectors.toList());
 
         //TODO == if the inventory is in stock, create an order
-        Boolean resultFromInventory = webClient.get()
+        InventoryResponse[] resultAsInventoryResponseArray = webClient.get()
                 .uri("http://localhost:9091/inventory/inventories",
                         uriBuilder -> uriBuilder.queryParam("skuCode", listOfSkuCodes)
                                 .build())
                 .retrieve()
-                .bodyToMono(Boolean.class)
+                .bodyToMono(InventoryResponse[].class)
                 .block();
-        if (resultFromInventory) {
+
+        boolean existInStock = Arrays
+                .stream(resultAsInventoryResponseArray)
+                .allMatch(InventoryResponse::isInventoryInStock);
+
+        if (existInStock) {
             //save in db
             this.orderRepository.save(order);
         }
         else {
-            throw new IllegalArgumentException();
+            //otherwise throw an exception
+            throw new IllegalArgumentException("Unfortunately, given product is currently not available in stock!");
         }
     }
 

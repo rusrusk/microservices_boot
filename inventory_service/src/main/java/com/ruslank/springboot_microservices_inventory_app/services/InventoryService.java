@@ -22,14 +22,14 @@ public class InventoryService {
     //querying db to find out all inventory objects
     @Transactional(readOnly = true)
     public List<InventoryResponse> ListOfInventoriesInStock(List<String> listOfSkuCodes) {
-        List<Inventory> inventory = this.inventoryRepository.findBySkuCode(listOfSkuCodes);
+        List<Inventory> inventory = this.inventoryRepository.findBySkuCodeIn(listOfSkuCodes);
          return inventory
                  .stream()
                  .map(i ->
                      InventoryResponse.builder()
                              .skuCode(i.getSkuCode())
                              .isInventoryInStock(i.getQuantity() > 0)
-                             .build()
-                             ).collect(Collectors.toList());
+                             .build())
+                 .collect(Collectors.toList());
     }
 }

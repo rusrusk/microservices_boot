@@ -21,10 +21,14 @@ public class OrderService {
     public void createOrder(OrderRequest orderRequest) {
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
+        //map ItemsPerOrderDto to ItemsPerOrder
         List<ItemsPerOrder> itemsPerOrderDtoList =  orderRequest.getItemsPerOrderDtoList()
                 .stream()
                 .map(items -> mapToDto(items)).collect(Collectors.toList());
+
+        //setting dtolist to order list
         order.setItemsPerOrderList(itemsPerOrderDtoList);
+        //save in db
         this.orderRepository.save(order);
     }
 

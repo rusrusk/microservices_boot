@@ -9,6 +9,6 @@ import java.util.List;
 @Data
 @RequiredArgsConstructor
 public class OrderRequest {
-
+    //request will be returned when post request is received to the server
     private List<ItemsPerOrderDto> itemsPerOrderDtoList;
 }

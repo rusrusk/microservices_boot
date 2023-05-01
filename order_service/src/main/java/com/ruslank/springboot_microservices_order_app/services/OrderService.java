@@ -7,6 +7,7 @@ import com.ruslank.springboot_microservices_order_app.entities.Order;
 import com.ruslank.springboot_microservices_order_app.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 import java.util.UUID;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final WebClient webClient;
 
     public void createOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -28,12 +30,27 @@ public class OrderService {
 
         //setting dtolist to order list
         order.setItemsPerOrderList(itemsPerOrderDtoList);
-        //save in db
+
+        List<String> listOfSkuCodes = order.getItemsPerOrderList()
+                .stream()
+                .map(item -> (item.getSkuCode()))
+                .collect(Collectors.toList());
 
         //TODO == if the inventory is in stock, create an order
-
-
-        this.orderRepository.save(order);
+        Boolean resultFromInventory = webClient.get()
+                .uri("http://localhost:9091/inventory/inventories",
+                        uriBuilder -> uriBuilder.queryParam("skuCode", listOfSkuCodes)
+                                .build())
+                .retrieve()
+                .bodyToMono(Boolean.class)
+                .block();
+        if (resultFromInventory) {
+            //save in db
+            this.orderRepository.save(order);
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
     }
 
     private ItemsPerOrder mapToDto(ItemsPerOrderDto itemsPerOrderDto) {

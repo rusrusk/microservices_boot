@@ -1,0 +1,25 @@
+services:
+  db:
+    container_name: mysql_order
+    image: mysql
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: boot
+      MYSQL_PASSWORD: boot
+      MYSQL_DATABASE: order_service
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - db
+    restart: unless-stopped
+
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
+

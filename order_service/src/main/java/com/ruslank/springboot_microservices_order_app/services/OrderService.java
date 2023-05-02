@@ -24,7 +24,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     @Autowired
-    private WebClient.Builder webClientBuilder;
+    private WebClient.Builder LoadBalancedWebClientBuilder;
 
     public void createOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -43,7 +43,7 @@ public class OrderService {
                 .collect(Collectors.toList());
 
         //TODO == if the inventory is in stock, create an order
-        InventoryResponse[] resultAsInventoryResponseArray = webClientBuilder.build().get()
+        InventoryResponse[] resultAsInventoryResponseArray = LoadBalancedWebClientBuilder.build().get()
                 .uri("http://inventory-service/inventory/inventories",
                         uriBuilder -> uriBuilder.queryParam("skuCode", listOfSkuCodes)
                                 .build())

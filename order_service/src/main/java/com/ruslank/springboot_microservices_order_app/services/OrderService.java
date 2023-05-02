@@ -1,5 +1,6 @@
 package com.ruslank.springboot_microservices_order_app.services;
 
+import com.ruslank.springboot_microservices_order_app.config.WebClientConfig;
 import com.ruslank.springboot_microservices_order_app.dto.InventoryResponse;
 import com.ruslank.springboot_microservices_order_app.dto.ItemsPerOrderDto;
 import com.ruslank.springboot_microservices_order_app.dto.OrderRequest;
@@ -7,6 +8,7 @@ import com.ruslank.springboot_microservices_order_app.entities.ItemsPerOrder;
 import com.ruslank.springboot_microservices_order_app.entities.Order;
 import com.ruslank.springboot_microservices_order_app.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -20,7 +22,9 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+
+    @Autowired
+    private WebClient.Builder webClientBuilder;
 
     public void createOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -39,8 +43,8 @@ public class OrderService {
                 .collect(Collectors.toList());
 
         //TODO == if the inventory is in stock, create an order
-        InventoryResponse[] resultAsInventoryResponseArray = webClient.get()
-                .uri("http://localhost:9091/inventory/inventories",
+        InventoryResponse[] resultAsInventoryResponseArray = webClientBuilder.build().get()
+                .uri("http://inventory-service/inventory/inventories",
                         uriBuilder -> uriBuilder.queryParam("skuCode", listOfSkuCodes)
                                 .build())
                 .retrieve()

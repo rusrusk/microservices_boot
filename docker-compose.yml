@@ -1,0 +1,67 @@
+services:
+  mysql_order:
+    container_name: mysql_order
+    image: mysql
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: boot
+      MYSQL_PASSWORD: boot
+      MYSQL_DATABASE: order_service
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql_order :/var/lib/mysql
+    restart: unless-stopped
+    expose:
+      - 3306
+    command: -p 3306
+
+  mysql_inventory:
+    container_name: mysql_inventory
+    image: mysql
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: boot
+      MYSQL_PASSWORD: boot
+      MYSQL_DATABASE: inventory_service
+    ports:
+      - 3307:3307
+    volumes:
+      - ./mysql_inventory :/var/lib/mysql
+    restart: unless-stopped
+    expose:
+      - 3306
+    command: -p 3306
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: boot
+      MONGO_INITDB_DATABASE: product_microservice
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    volumes:
+      - ./mongo-data:/data/db
+    restart: unless-stopped
+
+  eureka_discovery_service:
+    image: rusrusk/eureka_discovery_service:latest
+    container_name: eureka_discovery_service
+    pull_policy: always
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      -
+
+#networks:
+#  db:
+#    driver: bridge
+#
+#volumes:
+#  db:

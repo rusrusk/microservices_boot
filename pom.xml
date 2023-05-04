@@ -17,8 +17,8 @@
         <module>product_service</module>
         <module>order_service</module>
         <module>inventory_service</module>
-        <module>registry_and_discovery_service</module>
         <module>api_gateway_service</module>
+        <module>eureka_discovery_service</module>
     </modules>
 
     <properties>
@@ -59,6 +59,17 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <from>
+                        <image>eclipse-temurin:20.0.1_9-jre</image>
+                    </from>
+                    <to><image>registry.hub.docker.com/rusrusk/${project.artifactId}</image></to>
                 </configuration>
             </plugin>
         </plugins>

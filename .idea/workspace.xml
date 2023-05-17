@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f24df749-f86d-43b6-ace1-d1726697eeb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/order_service/src/main/java/com/ruslank/springboot_microservices_order_app/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order_service/src/main/java/com/ruslank/springboot_microservices_order_app/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order_service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_service/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order_service/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

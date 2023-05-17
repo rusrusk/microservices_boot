@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f24df749-f86d-43b6-ace1-d1726697eeb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/order_service/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order_service/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,7 @@
       <recent name="$PROJECT_DIR$/api_gateway_service" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Application.ApiGatewayServiceApplication">
     <configuration name="ApiGatewayServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ruslank.api_gateway_service.ApiGatewayServiceApplication" />
       <module name="api_gateway_service" />
@@ -84,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaDiscoveryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ruslank.eureka_discovery_service.EurekaDiscoveryServiceApplication" />
-      <module name="eureka_discovery_service" />
+    <configuration name="SpringbootMicroservicesAppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslank.springboot_microservices_app.SpringbootMicroservicesAppApplication" />
+      <module name="product_service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ruslank.eureka_discovery_service.*" />
+          <option name="PATTERN" value="com.ruslank.springboot_microservices_app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,15 +97,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RegistryDiscoveryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ruslank.registry_discovery_service.RegistryDiscoveryServiceApplication" />
-      <module name="registry_discovery_service" />
+    <configuration name="SpringbootMicroservicesInventoryAppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslank.springboot_microservices_inventory_app.SpringbootMicroservicesInventoryAppApplication" />
+      <module name="inventory_service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ruslank.registry_discovery_service.*" />
+          <option name="PATTERN" value="com.ruslank.springboot_microservices_inventory_app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootMicroservicesOrderAppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslank.springboot_microservices_order_app.SpringbootMicroservicesOrderAppApplication" />
+      <module name="order_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruslank.springboot_microservices_order_app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="order_service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="order_service" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -116,36 +142,28 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="order_service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="product_service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="product_service/docker-compose.yml" />
+          <option name="sourceFilePath" value="order_service/docker-compose.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.EurekaDiscoveryServiceApplication" />
-      <item itemvalue="Application.RegistryDiscoveryServiceApplication" />
+      <item itemvalue="Application.SpringbootMicroservicesAppApplication" />
+      <item itemvalue="Application.SpringbootMicroservicesInventoryAppApplication" />
+      <item itemvalue="Application.SpringbootMicroservicesOrderAppApplication" />
       <item itemvalue="Application.ApiGatewayServiceApplication" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="Docker.product_service: Compose Deployment" />
+      <item itemvalue="Docker.order_service: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.product_service: Compose Deployment" />
-        <item itemvalue="Application.EurekaDiscoveryServiceApplication" />
-        <item itemvalue="Application.RegistryDiscoveryServiceApplication" />
         <item itemvalue="Application.ApiGatewayServiceApplication" />
+        <item itemvalue="Application.SpringbootMicroservicesInventoryAppApplication" />
+        <item itemvalue="Application.SpringbootMicroservicesOrderAppApplication" />
+        <item itemvalue="Application.SpringbootMicroservicesAppApplication" />
+        <item itemvalue="Docker.order_service: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>

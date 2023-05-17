@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f24df749-f86d-43b6-ace1-d1726697eeb7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/order_service/src/main/java/com/ruslank/springboot_microservices_order_app/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order_service/src/main/java/com/ruslank/springboot_microservices_order_app/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order_service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order_service/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="excludeTargetFolder" value="false" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PE1G6WGJ4QJTkg3HUJEHFANfL5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="compactDirectories" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rkultaev/Downloads/microservices_common/eureka_discovery_service&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eureka_discovery_service" />
+      <recent name="$PROJECT_DIR$/inventory_service" />
+      <recent name="$PROJECT_DIR$/api_gateway_service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+    <configuration name="ApiGatewayServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslank.api_gateway_service.ApiGatewayServiceApplication" />
+      <module name="api_gateway_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruslank.api_gateway_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaDiscoveryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslank.eureka_discovery_service.EurekaDiscoveryServiceApplication" />
+      <module name="eureka_discovery_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruslank.eureka_discovery_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistryDiscoveryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ruslank.registry_discovery_service.RegistryDiscoveryServiceApplication" />
+      <module name="registry_discovery_service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruslank.registry_discovery_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="product_service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="product_service/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.EurekaDiscoveryServiceApplication" />
+      <item itemvalue="Application.RegistryDiscoveryServiceApplication" />
+      <item itemvalue="Application.ApiGatewayServiceApplication" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.product_service: Compose Deployment" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.product_service: Compose Deployment" />
+        <item itemvalue="Application.EurekaDiscoveryServiceApplication" />
+        <item itemvalue="Application.RegistryDiscoveryServiceApplication" />
+        <item itemvalue="Application.ApiGatewayServiceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f24df749-f86d-43b6-ace1-d1726697eeb7" name="Changes" comment="" />
+      <created>1683007328059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683007328059</updated>
+    </task>
+    <task id="LOCAL-00001" summary="adding discovery service eureka netflix to manage different ip addresses and ports when sending http reqs to inventory service">
+      <created>1683017512545</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683017512545</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added the LoadBalancing functionality ,so that now the uri domain is not static, and service name is mapped to an instance URL based on the port that the service is running">
+      <created>1683034602186</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683034602186</updated>
+    </task>
+    <task id="LOCAL-00003" summary="@LoadBalancer">
+      <created>1683034668423</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683034668423</updated>
+    </task>
+    <task id="LOCAL-00004" summary="api_gateway module to create and build as a gateway for services and security">
+      <created>1683035988281</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683035988281</updated>
+    </task>
+    <task id="LOCAL-00005" summary="configuring the application.properties to enable gateway to connect to eureka url">
+      <created>1683038023590</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683038023590</updated>
+    </task>
+    <task id="LOCAL-00006" summary="api gateway on port 8080 to route to any service instances using load balancer">
+      <created>1683040930706</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683040930707</updated>
+    </task>
+    <task id="LOCAL-00007" summary="installed keycloak docker image to enable security in the api_gateway service">
+      <created>1683046119816</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683046119816</updated>
+    </task>
+    <task id="LOCAL-00008" summary="keycloak authorization access token in process">
+      <created>1683048740569</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683048740569</updated>
+    </task>
+    <task id="LOCAL-00009" summary="configuring resilience4j library to allow circuit breaker">
+      <created>1683131676175</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683131676175</updated>
+    </task>
+    <task id="LOCAL-00010" summary="trying to dockerize services to prevent from manual spinning up of the services separately">
+      <created>1683131999257</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683131999257</updated>
+    </task>
+    <task id="LOCAL-00011" summary="containereizing services with jib maven plugin">
+      <created>1683204609800</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683204609800</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding discovery service eureka netflix to manage different ip addresses and ports when sending http reqs to inventory service" />
+    <MESSAGE value="added the LoadBalancing functionality ,so that now the uri domain is not static, and service name is mapped to an instance URL based on the port that the service is running" />
+    <MESSAGE value="@LoadBalancer" />
+    <MESSAGE value="api_gateway module to create and build as a gateway for services and security" />
+    <MESSAGE value="configuring the application.properties to enable gateway to connect to eureka url" />
+    <MESSAGE value="api gateway on port 8080 to route to any service instances using load balancer" />
+    <MESSAGE value="installed keycloak docker image to enable security in the api_gateway service" />
+    <MESSAGE value="keycloak authorization access token in process" />
+    <MESSAGE value="configuring resilience4j library to allow circuit breaker" />
+    <MESSAGE value="trying to dockerize services to prevent from manual spinning up of the services separately" />
+    <MESSAGE value="containereizing services with jib maven plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="containereizing services with jib maven plugin" />
+  </component>
+</project>

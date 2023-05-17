@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/eureka_discovery_service/eureka_discovery_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka_discovery_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/inventory_service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/notification_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/product_service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/registry_and_discovery_service/src/main/java" charset="UTF-8" />

@@ -6,9 +6,11 @@ import com.ruslank.springboot_microservices_order_app.dto.ItemsPerOrderDto;
 import com.ruslank.springboot_microservices_order_app.dto.OrderRequest;
 import com.ruslank.springboot_microservices_order_app.entities.ItemsPerOrder;
 import com.ruslank.springboot_microservices_order_app.entities.Order;
+import com.ruslank.springboot_microservices_order_app.events.OrderPlacedEvent;
 import com.ruslank.springboot_microservices_order_app.repositories.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -21,12 +23,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class OrderService {
 
-    private final OrderRepository orderRepository;
+    private final OrderRepository   orderRepository;
+    private final KafkaTemplate<String, OrderPlacedEvent>     kafkaTemplate;
 
     @Autowired
     private WebClient.Builder LoadBalancedWebClientBuilder;
 
-    public void createOrder(OrderRequest orderRequest) {
+    public String createOrder(OrderRequest orderRequest) {
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
         //map ItemsPerOrderDto to ItemsPerOrder
@@ -58,6 +61,9 @@ public class OrderService {
         if (existInStock) {
             //save in db
             this.orderRepository.save(order);
+            //make a default topic in properties
+            kafkaTemplate.send("notificationTopic", new OrderPlacedEvent(order.getOrderNumber()));
+            return "Order was placed seamlessly";
         }
         else {
             //otherwise throw an exception

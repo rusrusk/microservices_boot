@@ -19,6 +19,7 @@
         <module>inventory_service</module>
         <module>api_gateway_service</module>
         <module>eureka_discovery_service</module>
+        <module>notification_service</module>
     </modules>
 
     <properties>
